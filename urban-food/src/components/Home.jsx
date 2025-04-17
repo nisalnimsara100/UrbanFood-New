@@ -16,52 +16,61 @@ const suggestedProducts = [
 
 function Home() {
   return (
-    <main className="flex-grow bg-[#FAFAFA]">
+    <main className="flex-grow bg-[#FAFAFA] w-full">
       {/* Hero Section */}
-      <section className="bg-[#F5F5DC] py-16 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[#4A4A4A] font-[Poppins] animate-fade-in">Welcome to Urban Food 🥗</h1>
-          <p className="text-lg md:text-xl mb-6 text-[#6B7280] font-[Poppins]">Fresh ingredients, delivered with a smile!</p>
-          <button className="bg-[#8BC34A] text-white px-6 py-3 rounded-full font-medium text-lg hover:bg-[#7CB342] transition-colors duration-300 font-[Poppins]">
-            Shop Now
-          </button>
+      <section className="bg-[#F5F5DC] py-16 text-center w-full">
+        <div className="px-4 w-full max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between">
+          <div className="text-center md:text-left mb-6 md:mb-0">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-[#4A4A4A] font-[Poppins] animate-fade-in">Welcome to Urban Food 🥗</h1>
+            <p className="text-lg md:text-xl mb-6 text-[#6B7280] font-[Poppins]">Fresh ingredients, delivered with a smile!</p>
+            <button className="bg-[#8BC34A] text-white px-6 py-3 rounded-full font-medium text-lg hover:bg-[#7CB342] transition-colors duration-300 font-[Poppins]">
+              Shop Now
+            </button>
+          </div>
+          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#EDEDED] flex items-center justify-center">
+            <span className="text-4xl md:text-5xl">🥗</span>
+          </div>
         </div>
       </section>
 
       {/* Featured Products Section */}
-      <section className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#4A4A4A] font-[Poppins]">Featured Products</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-          {featuredProducts.map((product) => (
-            <div key={product.id} className="w-full max-w-xs bg-white border rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
-              <img src={product.image} alt={product.name} className="w-full h-36 object-cover rounded-md mb-4" />
-              <h3 className="text-lg font-semibold text-[#4A4A4A] font-[Poppins] text-center">{product.name}</h3>
-              <p className="text-[#6B7280] text-center font-[Poppins]">${product.price.toFixed(2)}</p>
-              <button className="mt-4 w-full bg-[#8BC34A] text-white py-2 rounded-md hover:bg-[#7CB342] transition-colors duration-300 font-[Poppins]">
-                Add to Cart
-              </button>
-            </div>
-          ))}
+      <section className="py-12 w-full">
+        <div className="px-4 w-full max-w-screen-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#4A4A4A] font-[Poppins]">Featured Products</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center w-full">
+            {featuredProducts.map((product) => (
+              <div key={product.id} className="w-full max-w-xs bg-white border rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src={product.image} alt={product.name} className="w-full h-36 object-cover rounded-md mb-4" />
+                <h3 className="text-lg font-semibold text-[#4A4A4A] font-[Poppins] text-center">{product.name}</h3>
+                <p className="text-[#6B7280] text-center font-[Poppins]">${product.price.toFixed(2)}</p>
+                <button className="mt-4 w-full bg-[#8BC34A] text-white py-2 rounded-md hover:bg-[#7CB342] transition-colors duration-300 font-[Poppins]">
+                  Add to Cart
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Suggested Products Section */}
-      <section className="container mx-auto px-4 py-12 bg-[#F5F5DC]">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#4A4A4A] font-[Poppins]">Suggested for You</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-          {suggestedProducts.map((product) => (
-            <div key={product.id} className="w-full max-w-xs relative bg-white border rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
-              <img src={product.image} alt={product.name} className="w-full h-36 object-cover rounded-md mb-4" />
-              <h3 className="text-lg font-semibold text-[#4A4A4A] font-[Poppins] text-center">{product.name}</h3>
-              <p className="text-[#6B7280] text-center font-[Poppins]">${product.price.toFixed(2)}</p>
-              <span className="absolute top-3 right-3 bg-[#EF4444] text-white text-xs font-semibold px-2 py-1 rounded-full font-[Poppins]">
-                {product.discount}
-              </span>
-              <button className="mt-4 w-full bg-[#8BC34A] text-white py-2 rounded-md hover:bg-[#7CB342] transition-colors duration-300 font-[Poppins]">
-                Add to Cart
-              </button>
-            </div>
-          ))}
+      <section className="py-12 bg-[#F5F5DC] w-full">
+        <div className="px-4 w-full max-w-screen-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#4A4A4A] font-[Poppins]">Suggested for You</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center w-full">
+            {suggestedProducts.map((product) => (
+              <div key={product.id} className="w-full max-w-xs relative bg-white border rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
+                <img src={product.image} alt={product.name} className="w-full h-36 object-cover rounded-md mb-4" />
+                <h3 className="text-lg font-semibold text-[#4A4A4A] font-[Poppins] text-center">{product.name}</h3>
+                <p className="text-[#6B7280] text-center font-[Poppins]">${product.price.toFixed(2)}</p>
+                <span className="absolute top-3 right-3 bg-[#EF4444] text-white text-xs font-semibold px-2 py-1 rounded-full font-[Poppins]">
+                  {product.discount}
+                </span>
+                <button className="mt-4 w-full bg-[#8BC34A] text-white py-2 rounded-md hover:bg-[#7CB342] transition-colors duration-300 font-[Poppins]">
+                  Add to Cart
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>
